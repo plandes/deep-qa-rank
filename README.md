@@ -296,7 +296,8 @@ As described in the [evaluation](#evaluation) section, the trained model was
 used to rank 10,570 question across 2,067 paragraphs.  A mean reciprocal rank
 of 0.7088 was achieved with a standard deviation or 0.392.  Again, taking the
 reciprocal one can think of the correct paragraph as ranked as the 1.411 most
-probable classification.
+probable classification.  It ranks the correct paragraph with rank 0 for the
+given test data set question/answer pairing with an overall accuracy of 96%.
 
 The [paper] trained and tested on the [TREC QA] data set achieves an improved
 score of 0.8078.  The data set and [other differences](#changes) might explain
