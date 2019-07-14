@@ -1,0 +1,9 @@
+*.pyc
+*_flymake.py
+/target
+/data
+/results
+*.log
+/pyinst
+nohup.out
+/log
