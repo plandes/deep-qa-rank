@@ -8,8 +8,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import Normalizer
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
-from zensols.dltools import time
 from zensols.actioncli import (
+    time,
     persisted,
     PersistedWork,
 )

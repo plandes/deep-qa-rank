@@ -7,11 +7,11 @@ import itertools as it
 import gc
 from multiprocessing import Pool
 from zensols.actioncli import (
+    time,
     persisted,
     Stash,
     DirectoryStash,
 )
-from zensols.dltools.time import time
 from zensols.dlqaclass import (
     AppConfig,
     QAModelManager,

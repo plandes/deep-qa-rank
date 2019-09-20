@@ -5,7 +5,7 @@
 PROJ_TYPE=		python
 
 # replace interpreter with virtualenv
-PYTHON_BIN =		$(PROJ_PYENV_DIR)/bin/python3
+#PYTHON_BIN =		$(PROJ_PYENV_DIR)/bin/python3
 
 # current directory
 PROJ_DIR=		$(abspath $(shell pwd))

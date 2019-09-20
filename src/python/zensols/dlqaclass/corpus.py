@@ -9,7 +9,7 @@ from zensols.actioncli import (
     FactoryStash,
     PersistedWork,
 )
-from zensols.dltools.time import time
+from zensols.actioncli.time import time
 from zensols.nlp import (
     LanguageResourceFactory,
     TokenNormalizerFactory,

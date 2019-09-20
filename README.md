@@ -255,7 +255,7 @@ Otherwise, do the following and plan to make coffee:
 4. Download and parse the corpus: `make parse`.  This downloads the [SQuAD]
    corpus the first time (if not found) to `data/corpora/squad`.  Once the
    corpus is downloaded it is parsed with [SpaCy] and stored as binary Python
-   pickled files in `data/data/proc`.
+   pickled files in `data/proc`.
 4. Extract and store features from the [SpaCy] parse: `make features`.  This
    creates features from the parsed data in a fast consumable format for the
    training phase.

@@ -11,6 +11,7 @@ from zensols.actioncli import (
     persisted,
     PersistableContainer,
     Stash,
+    DelegateStash,
     DirectoryStash,
     CacheStash,
     ConfigFactory,
@@ -264,7 +265,7 @@ class ParagraphFeatures(Features):
             q.paragraph = self
 
 
-class ParagraphStash(Stash):
+class ParagraphStash(DelegateStash):
     def __init__(self, para_fn):
         self.para_fn = para_fn
 
@@ -274,7 +275,10 @@ class ParagraphStash(Stash):
         return {str(p.id): p for p in self.para_fn()}
 
     def load(self, name: str):
-        return self.paragraphs[name]
+        para = self.paragraphs[name]
+        if para is None:
+            raise ValueError(f'no such paragraph: {name}')
+        return para
 
     @persisted('_keys')
     def keys(self):
@@ -291,6 +295,8 @@ class ParagraphDictionaryStash(DirectoryStash):
         if not isinstance(name, str):
             raise ValueError(f'wrong key type: {type(name)}')
         para = super(ParagraphDictionaryStash, self).load(name)
+        if para is None:
+            return None
         para.lr = self.lr
         para.word_embed = self.word_embed
         for q in para.questions:
